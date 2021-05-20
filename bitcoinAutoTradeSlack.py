@@ -5,7 +5,7 @@ import requests
 
 access = "kMmjoM9SK71NxDmltgq3QYrRsMZTfxrRmeu3aXmW"
 secret = "PFZ8OdknpdpamKHrJCiqXZbkweZJnMQ3Mx82zRJy"
-myToken = "xoxb-2109667603168-2082810469813-IwhG9KO3LOWb1sFi46FxA7K6"
+myToken = "xoxb-2109667603168-2082810469813-awK7DRAFaUxi42O6YebJxmfA"
 
 
 def post_message(token, channel, text):
