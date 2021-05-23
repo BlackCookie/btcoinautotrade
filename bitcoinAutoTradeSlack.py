@@ -97,7 +97,7 @@ while True:
                     post_message(myToken,"#crypto", "ETH buy : " +str(buy_result))
         else:
             eth = get_balance("ETH")
-            if eth > 0.0015:
+            if eth > 5000/get_current_price("KRW-ETH"):
                 sell_result = upbit.sell_market_order("KRW-ETH", eth*0.9995)
                 post_message(myToken,"#crypto", "ETH buy : " +str(sell_result))
         time.sleep(1)
