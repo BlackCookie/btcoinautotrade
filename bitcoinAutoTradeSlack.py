@@ -7,7 +7,7 @@ from fbprophet import Prophet
 
 access = "kMmjoM9SK71NxDmltgq3QYrRsMZTfxrRmeu3aXmW"
 secret = "PFZ8OdknpdpamKHrJCiqXZbkweZJnMQ3Mx82zRJy"
-myToken = "xoxb-2109667603168-2082810469813-QX9wg6AFQfjP2BNSa0K5iEUv"
+myToken = "xoxb-2109667603168-2094353921586-mV5HzDEoIhJSdZkH9JCZVbYC"
 
 
 def post_message(token, channel, text):
