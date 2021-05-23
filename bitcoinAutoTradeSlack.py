@@ -2,6 +2,8 @@ import time
 import pyupbit
 import datetime
 import requests
+import schedule
+from fbprophet import Prophet
 
 access = "kMmjoM9SK71NxDmltgq3QYrRsMZTfxrRmeu3aXmW"
 secret = "PFZ8OdknpdpamKHrJCiqXZbkweZJnMQ3Mx82zRJy"
@@ -82,12 +84,13 @@ while True:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-ETH")
         end_time = start_time + datetime.timedelta(days=1)
+        schedule.run_pending()
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-ETH", 0.5)
             ma15 = get_ma15("KRW-ETH")
             current_price = get_current_price("KRW-ETH")
-            if target_price < current_price and ma15 < current_price:
+            if target_price < current_price and ma15 and current_price < predicted_close_price:
                 krw = get_balance("KRW")
                 if krw > 5000:
                     buy_result = upbit.buy_market_order("KRW-ETH", krw*0.9995)
